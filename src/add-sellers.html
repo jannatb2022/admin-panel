@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/5fe8ec1db0.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="raw.css">
+</head>
+<body class="bg-slate-200">
+    <!-- header_section -->
+    <section class=" relative mb-20 z-20 ">
+        <nav class="flex fixed top-0 left-0 w-full bg-blue-500 h-20">
+
+            <div class="admin w-1/6 text-pink-200 capitalize flex justify-center items-center text-2xl">
+                <a href="index.html" >
+                    <span class="admins">ad<span class="text-white lowercase mr-1">min</span>
+                    </span>
+                    <i class="fa-solid fa-landmark"></i>
+                </a>
+            </div>
+
+            <div class="search w-2/6 flex justify-center items-center">
+                <button class="bg-blue-600 px-3 py-2 rounded border-2 border-blue-700 btn flex flex-row items-center gap-3" id="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" id="btnss">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                      </svg>
+                    <input type="search" placeholder="Type here for search.." class="bg-blue-600 text-slate-200 outline-none placeholder:text-gray-300 searchh">
+                </button>
+                <button class="bg-slate-900 px-3 py-2 rounded border-2 border-slate-900 btn2 fixed left-36 top-20 hidden transition-transform scale-y-0 duration-700 flex flex-row items-center gap-3" id="btn2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor" id="btnss">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                      </svg>
+                    <input type="search" placeholder="Type here for search.." class="bg-black text-slate-200 outline-none placeholder:text-gray-300">
+                </button>
+            </div>
+            <div class="icons flex w-3/6  gap-6 justify-end mr-8">
+                
+                <div class=" flex justify-end items-center relative">
+                    
+                    <button id="notification"><i class="fa-solid fa-bell text-white text-2xl"></i></button>
+                    <div class="w-full h-full inset-0 hidden fixed" id="notification-overlay"></div>
+                    <div class="flex flex-col bg-slate-100 shadow-lg fixed w-30 top-20 right-24 duration-700 hidden transition" id="notification-message">
+
+                        <p class="text-gray-800 text-center capitalize mt-2 pb-3 border-b border-gray-300">notifications</p>
+
+                        <div class="flex flex-row gap-4 p-3 hover:bg-slate-200 cursor-pointer">
+                            <button class="flex items-center justify-center"><i class="fa-solid fa-user text-sky-500 text-2xl"></i>
+                            </button>
+                            <button class="flex flex-col ">
+                                <p class="text-sm">New user registerd!</p>
+                                <p class="text-xs">You have 10 unread messeges</p>
+                            </button>
+                        </div>
+                        <div class="flex justify-start flex-col p-3 hover:bg-slate-200 cursor-pointer">
+                            <p class="text-sm">New setttings</p>
+                            <p class="text-xs">There are new setting available</p>
+                        </div>
+                        <div class="flex justify-start flex-col p-3 hover:bg-slate-200 cursor-pointer">
+                            <p class="text-sm">Updates</p>
+                            <p class="text-xs">These are 2 new updates available</p>
+                        </div>
+                        <div class="p-2 text-xs text-left hover:bg-slate-200 transition duration-1000 cursor-pointer">see all notifications</div>
+                    </div>
+
+                </div>
+                <button class=" flex justify-end items-center text-white text-2xl" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></button>
+                <button class=" flex justify-end items-center text-white text-2xl"><i class="fa-solid fa-comment-dots"></i></button>
+
+                <div class="relative">
+                    <div class="flex justify-center items-center mt-5">
+                        <img class="rounded-full h-10 w-10 cursor-pointer object-fit border-2 border-white" id="overlay-img" src="https://store.bangladeshisoftware.com/public/admin/images/avatar-1.jpg" alt="image" >
+                    </div>
+                    <div class="w-full h-full inset-0 hidden fixed" id="hide-overlay"></div>
+                    <div class="bg-slate-100 text-gray-700 hidden fixed right-0 mt-5 rounded  w-36 shadow-xl duration-700" id="overlay">
+                        <div class="hover:bg-slate-200 transition-transform p-2 cursor-pointer"><p><i class="fa-solid fa-user pr-2"></i>profile</p></div>
+                        <div class="hover:bg-slate-200 transition-transform p-2 cursor-pointer"><p><i class="fa-solid fa-gear pr-2"></i>setings</p></div>
+                        <div class="hover:bg-slate-200 transition-transform p-2 cursor-pointer"><p><i class="fa-solid fa-lock pr-2"></i>lock screen</p></div>
+                        <div class="hover:bg-slate-200 transition-transform p-2 cursor-pointer"><p><i class="fa-solid fa-arrow-right-from-bracket pr-2"></i>log out</p></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="flex flex-row  bg-slate-200 z-10 gap-2">
+        <div class="dashboard__names w-1/5 bg-slate-50">
+            <div class="flex flex-col">
+                <div class="">
+                    <ul>
+                        <li class="p-3 capitalize hover:bg-slate-100 cursor-pointer hover:shadow-lg">
+                            <div class=" flex flex-row  transition duration-700 rounded">
+                                <div class="w-1/3  flex items-center justify-center icons"><span class="w-8 h-8 text-white bg-pink-500 rounded-full flex items-center justify-center">
+                                   <a href="index.html"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                                      </svg></a>
+                                </span>
+                                </div>
+                                <div class="flex items-center justify-start w-2/3 querym">    
+                                    <a href="index.html" class="text-slate-600 ">dashboard</a> 
+                                </div>
+                            </div>
+                        </li>
+                            
+                        <li class="p-3 uppercase hover:bg-slate-100 cursor-pointer hover:shadow-lg">
+                            <div class=" flex flex-row transition duration-700 rounded">
+                                <div class="w-1/3  flex items-center justify-center icons"><span class="w-8 h-8 text-white bg-pink-500 rounded-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                                      </svg>
+                                </span>
+                                </div>
+                                <div class="flex items-center justify-start w-2/3 querym">    
+                                    <a href="index.html" class="text-slate-600">pos</a> 
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-3 capitalize hover:bg-slate-100 cursor-pointer hover:shadow-lg relative">
+                            <div class="div">
+                                <div class="nav flex flex-row transition duration-700 rounded">
+                                    <div class="w-1/3  flex items-center justify-center icons"><span class="w-8 h-8 text-white bg-pink-500 rounded-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                                          </svg>
+                                    </span>
+                                    </div>
+                                    <div class="w-1/3 flex items-start justify-start querym">    
+                                        <a href="javascript:void(0)" class="text-slate-600">customer</a> 
+                                    </div>
+                                    <div class="w-1/3   flex items-center justify-end text-2xl querym ">
+                                        <span class="w-8 h-8 flex items-center justify-center rounded-full shadow-xl bg-white">+</span>
+                                    </div>
+                                </div>
+                                <div class="li-items nav-items hidden ml-14 flex flex-col justify-center items-center">
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a class="text-slate-600" href="add-customer.html">add customer</a>
+                                    </div>
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a href="all-customers.html" class="text-slate-600">all customer's</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-3 capitalize hover:bg-slate-100 cursor-pointer hover:shadow-lg shadow-lg relative">
+                            <div class="div">
+                                <div class="nav flex flex-row transition duration-700 rounded">
+                                    <div class="w-1/3  flex items-center justify-center icons"><span class="w-8 h-8 text-white bg-pink-500 rounded-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                                          </svg>
+                                    </span>
+                                    </div>
+                                    <div class="w-1/3 flex items-start justify-start querym">    
+                                        <a href="javascript:void(0)" class="text-slate-600">seller</a> 
+                                    </div>
+                                    <div class="w-1/3   flex items-center justify-end text-2xl querym ">
+                                        <span class="w-8 h-8 flex items-center justify-center rounded-full shadow-xl bg-white">+</span>
+                                    </div>
+                                </div>
+                                <div class="li-items nav-items hidden ml-14 flex flex-col justify-center items-center">
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a class="text-slate-600" href="add-sellers.html">add seller</a>
+                                    </div>
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a href="all-sellers.html" class="text-slate-600">all seller's</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-3 capitalize hover:bg-slate-100 cursor-pointer hover:shadow-lg relative">
+                            <div class="div">
+                                <div class="nav flex flex-row transition duration-700 rounded">
+                                    <div class="w-1/3  flex items-center justify-center icons"><span class="w-8 h-8 text-white bg-pink-500 rounded-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+                                          </svg>
+                                    </span>
+                                    </div>
+                                    <div class="w-1/3 flex items-start justify-start querym">    
+                                        <a href="javascript:void(0)" class="text-slate-600">category
+                                        </a> 
+                                    </div>
+                                    <div class="w-1/3   flex items-center justify-end  querym   text-2xl  ">
+                                        <span class="w-8 h-8 flex items-center justify-center rounded-full shadow-xl bg-white">+</span>
+                                    </div>
+                                </div>
+                                <div class="li-items nav-items hidden ml-14 flex flex-col justify-center items-center">
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a class="text-slate-600" href="add-category.html">add category</a>
+                                    </div>
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a href="all-category.html" class="text-slate-600">all category</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-3 capitalize hover:bg-slate-100 cursor-pointer hover:shadow-lg relative">
+                            <div class="div">
+                                <div class="nav flex flex-row transition duration-700 rounded">
+                                    <div class="w-1/3  flex items-center justify-center icons"><span class="w-8 h-8 text-white bg-pink-500 rounded-full flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+                                          </svg>
+                                    </span>
+                                    </div>
+                                    <div class="w-1/3 flex items-start justify-start querym">    
+                                        <a href="javascript:void(0)" class="text-slate-600">product</a> 
+                                    </div>
+                                    <div class="w-1/3   flex items-center justify-end  querym   text-2xl  ">
+                                        <span class="w-8 h-8 flex items-center justify-center rounded-full shadow-xl bg-white">+</span>
+                                    </div>
+                                </div>
+                                <div class="li-items nav-items hidden ml-14 flex flex-col justify-center items-center">
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a class="text-slate-600" href="add-products.html">add products</a><br>
+                                    </div>
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a href="all-products.html" class="text-slate-600">all products</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-3 capitalize hover:bg-slate-100 cursor-pointer hover:shadow-lg relative">
+                            <div class="flex flex-col">
+                                <div class="nav flex flex-row transition duration-700 rounded">
+                                    <div class="w-1/3  flex items-center justify-center icons"><span class="w-8 h-8 text-white bg-pink-500 rounded-full flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                      </svg></span>
+                                    </div>
+                                    <div class="w-1/3 flex items-start justify-start querym">    
+                                        <a href="javascript:void(0)" class="text-slate-600">order</a> 
+                                    </div>
+                                    <div class="w-1/3   flex items-center justify-end  querym   text-2xl ">
+                                        <span class="w-8 h-8 flex items-center justify-center rounded-full shadow-xl bg-white">+</span>
+                                    </div>
+                                </div>
+                                <div class="li-items nav-items hidden ml-14 flex flex-col justify-center items-center">
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a class="text-slate-600" href="pending-orders.html">pending orders</a>
+                                    </div>
+                                    <div class="hover:bg-slate-300 transition duration-700 rounded text-center">
+                                        <a href="success-orders.html" class="text-slate-600 ">sucess orders</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p-3 capitalize text-slat-300 hover:bg-slate-100 cursor-pointer hover:shadow-lg">
+                            <div class="flex flex-row transition duration-700 rounded">
+                                <div class="w-1/3  flex items-center justify-center icons"><span class="w-8 h-8 text-white bg-pink-500 rounded-full flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                                  </svg></span>
+                                </div>
+                                <div class="flex items-center justify-start w-2/3 querym">    
+                                    <a href="javascript:void(0)" class="text-slate-600">setting</a> 
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="arrow  flex items-center justify-end p-6 cursor-pointer ">
+                    <span class="rounded-full  bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center w-7 h-7 flex items-center justify-center font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard__body w-4/5 float-right container mx-auto px-2">
+            
+            <!-- add___seller__________ -->
+            <div class=" flex flex-col ">
+                <div class="flex items-start my-6 capitalize">
+                    <a href="index.html" class="text-blue-600">home</a>
+                    <span>/</span>
+                    <p>add seller</p>
+                </div>
+                <div class="form mx-auto">
+                    <div class="bg-slate-100 p-5 ">
+                        <h3 class="text-center capitalize font-semibold">add new seller</h3>
+                        <form action="#" class= "w-full capitalize p-1">
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="fname" class="text-sm">full name</label>
+                                <input type="text" id="fname" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Full Name">
+                            </div>
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="email" class="text-sm">Email</label>
+                                <input type="email" id="email" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Email">
+                            </div>
+
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="phone" class="text-sm">Phone</label>
+                                <input type="number" id="phone" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Phone">
+                            </div>
+
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="adds" class="text-sm">address</label>
+                                <input type="text" id="adds" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Address">
+                            </div>
+
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="shopName" class="text-sm">shop name</label>
+                                <input type="text" id="shopName" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Shop Name">
+                            </div>
+
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="aholder" class="text-sm">account holder</label>
+                                <input type="text" id="aholder" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Account Holder">
+                            </div>
+
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="anumber" class="text-sm">account number</label>
+                                <input type="number" id="anumber" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Account Number">
+                            </div>
+
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="bname" class="text-sm">bank name</label>
+                                <input type="text" id="bname" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Bank Name">
+                            </div>
+
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="brname" class="text-sm">branch name</label>
+                                <input type="text" id="brname" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="Branch Name">
+                            </div>
+
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="city" class="text-sm">city</label>
+                                <input type="text" id="city" class="w-96 focus:ring outline-none rounded h-8 border-gray-300 border pl-2" placeholder="City">
+                            </div>
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="photo" class="text-sm">photo</label>
+                                <input type="file" id="photo" class="outline-none ">
+                            </div>
+                            <div class="flex flex-col pb-4 gap-1">
+                                <label for="sellertype" class="text-sm">seller type</label>
+                                <select type="text" id="sellertype" class="w-96 focus:ring outline-none rounded h-9 pl-2">
+                                    <option value="">Distributor</option>
+                                    <option value="">Broucher</option>
+                                    <option value="">Whole Seller</option>
+                                </select>
+                            </div>
+                            <div class=" pb-4">
+                                <button class="px-5 py-2 bg-blue-500 hover:bg-blue-600 capitalize text-white focus:ring rounded">submit</button>
+                            </div>
+                            
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/header.js">
+
+    </script>
+</body>
+</html>
